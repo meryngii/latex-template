@@ -1,0 +1,25 @@
+\documentclass[10pt,a4j]{jsarticle}
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+\usepackage{comment}
+
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\divergence}{\mathrm{div}\,}
+\newcommand{\grad}{\mathrm{grad}\,}
+\newcommand{\rot}{\mathrm{rot}\,}
+
+\newcommand{\reffigure}[1]{図~\ref{figure:#1}}
+
+% 数式番号の形式変更
+\makeatletter
+\renewcommand{\theequation}{%
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+
