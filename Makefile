@@ -1,5 +1,5 @@
 .SUFFIXES: .tex .dvi .pdf
-.PHONY: plot clean
+.PHONY: plot svg clean
 
 F=report
 
@@ -10,14 +10,18 @@ texfiles:=$(wildcard *.tex)
 $F.pdf: $F.dvi
 	dvipdfmx $<
 
-$F.dvi: plot $(texfiles)
+$F.dvi: plot svg $(texfiles)
 	platex --shell-escape $F.tex
 	platex --shell-escape $F.tex
 
 plot:
-	cd plot; make
+	$(MAKE) -C plot
+
+svg:
+	$(MAKE) -C svg
 
 clean:
 	rm -f *~ *.dvi *.aux *.log *.pdf
-	cd plot; make clean
+	$(MAKE) -C plot clean
+	$(MAKE) -C svg clean
 
