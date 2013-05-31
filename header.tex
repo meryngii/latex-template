@@ -1,26 +1,50 @@
+%%%%% header.tex %%%%%
+
 \documentclass[10pt,a4j]{jsarticle}
 
-\usepackage{amsmath,amssymb}
-\usepackage{bm}
+% パッケージの読み込み %{{{
 \usepackage[dvipdfmx]{graphicx}
-\usepackage{fancybox}
 \usepackage{color}
+\usepackage{amsmath,amssymb}
+% 用紙余白を指定
+\usepackage[top=25truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+% 段組み
 \usepackage{multicol}
-\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+% 複数行コメント
 \usepackage{comment}
+% モジュール読み込み
 \usepackage{import}
+% arrayとtabular環境を改善
+\usepackage{array}
+% 枠線をつける
+\usepackage{ascmac}
+\usepackage{fancybox}
+% 数式環境で太字を使う
+\usepackage{bm}
+%}}}
 
+% 各種数学記号 %{{{
 \newcommand{\diff}{\mathrm{d}}
 \newcommand{\divergence}{\mathrm{div}\,}
 \newcommand{\grad}{\mathrm{grad}\,}
 \newcommand{\rot}{\mathrm{rot}\,}
+%}}}
 
+% 図表番号の参照 %{{{
 \newcommand{\reffigure}[1]{図~\ref{figure:#1}}
+\newcommand{\refequation}[1]{式 (\ref{equation:#1})}
+\newcommand{\reftable}[1]{表~\ref{table:#1}}
+%}}}
 
-% 数式番号の形式変更
+% 数式番号の形式変更 %{{{
 \makeatletter
 \renewcommand{\theequation}{%
 \thesection.\arabic{equation}}
 \@addtoreset{equation}{section}
 \makeatother
+%}}}
+
+% 参考文献の形式 %{{{
+\bibliographystyle{tipsj}
+%}}}
 
