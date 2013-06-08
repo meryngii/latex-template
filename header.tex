@@ -21,13 +21,25 @@
 \usepackage{fancybox}
 % 数式環境で太字を使う
 \usepackage{bm}
+% 図表位置を[H]で強制指定
+\usepackage{here}
 %}}}
 
 % 各種数学記号 %{{{
+% \diff : 微分 d
 \newcommand{\diff}{\mathrm{d}}
+% \divergence, \grad, \rot
 \newcommand{\divergence}{\mathrm{div}\,}
 \newcommand{\grad}{\mathrm{grad}\,}
 \newcommand{\rot}{\mathrm{rot}\,}
+
+% \laplace, \fourier
+\newcommand{\laplace}{\mathcal{L}}
+\newcommand{\fourier}{\mathcal{F}}
+
+% \Celsius
+\newcommand{\Celsius}{{}^\circ\mathrm{C}}
+
 %}}}
 
 % 図表番号の参照 %{{{
