@@ -1,4 +1,3 @@
-.SUFFIXES: .tex .dvi .pdf
 .PHONY: plot svg clean
 
 F=report
@@ -12,7 +11,7 @@ $F.pdf: $F.dvi
 
 $F.dvi: plot svg $(texfiles)
 	platex --shell-escape --kanji=utf8 $F
-	pbibtex -kanji=utf8 $F
+	-pbibtex -kanji=utf8 $F
 	platex --shell-escape --kanji=utf8 $F
 
 plot:
@@ -22,7 +21,7 @@ svg:
 	$(MAKE) -C svg
 
 clean:
-	rm -f *~ *.dvi *.aux *.log *.pdf *.blg *.bbl
 	$(MAKE) -C plot clean
 	$(MAKE) -C svg clean
+	rm -f *~ *.dvi *.aux *.log *.pdf *.blg *.bbl
 

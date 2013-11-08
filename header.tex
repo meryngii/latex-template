@@ -35,6 +35,8 @@
 \usepackage{siunitx}
 % URLを表示
 \usepackage{url}
+% 複数の図表をまとめて表示
+\usepackage{subfigure}
 %}}}
 
 % 各種数学記号 %{{{
@@ -95,5 +97,27 @@
 
 % footnoteをダガーで表示 %{{{
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%}}}
+
+% listingの設定(lstlisting) %{{{
+
+\lstset{
+    breaklines=true, % 行が長くなったら改行する
+    basicstyle=\ttfamily\scriptsize,
+    commentstyle={\itshape \color[cmyk]{1,0.4,1,0}},
+    classoffset=1,
+    keywordstyle={\bfseries \color[cmyk]{0,1,0,0}},
+    stringstyle={\ttfamily \color[rgb]{0,0,1}},
+    frame=tRBl,
+    framesep=5pt,
+    showstringspaces=false,
+    numbers=left,
+    stepnumber=1,
+    numberstyle=\tiny,
+    tabsize=2,
+    xrightmargin=0zw,
+    xleftmargin=3zw
+}
+
 %}}}
 

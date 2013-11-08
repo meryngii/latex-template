@@ -1,4 +1,3 @@
-.SUFFIXES: .plt .pdf
 .PHONY: clean
 
 pltfiles:=$(wildcard *.plt)
@@ -6,8 +5,8 @@ pdffiles:=$(pltfiles:.plt=.pdf)
 
 all: $(pdffiles)
 
-.plt.pdf:
-	gnuplot -mono $<
+%.pdf: %.plt
+	gnuplot -mono $< || { if ! [ -s $(<:.plt=.pdf) ]; then rm $(<:.plt=.pdf); fi; exit 1; }
 
 clean:
 	rm -f *.pdf *.xbb
