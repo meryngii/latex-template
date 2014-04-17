@@ -3,22 +3,46 @@
 
 \begin{document}
 
-\section{テンプレート}
+\section{テンプレート Template}
 
-テンプレート
+これはテストです。
 
-% 式番号なし
+This is a typeset template on \LaTeX.
+
+\begin{quotation}
+This is a quotation. 
+
+これは引用文です。
+\end{quotation}
+
+Use \verb|\[\]| to show an expression:
 \[a^2+b^2=c^2\]
 
-% 式番号あり
-\begin{equation}
+The alternative is \verb|align*|:
+\begin{align*}
 a^2+b^2=c^2
-\end{equation}
+\end{align*}
 
+If expression numbers are needed, then use \verb|align|:
 \begin{align}
-
+a^2+b^2=c^2
 \end{align}
 
+\section{フォント Font}
+Available font styles are:
+\begin{itemize}
+\item \textbf{Bold 太字}
+\item \textit{Italic イタリック体}
+\item \textrm{Roman ロマーン体}
+\item \textsf{Sanserif サンセリフ体}
+\item \textsc{Small Capital スモールキャピタル体}
+\item \texttt{Typewriter タイプライタ体}
+\item \textsl{Slant スラント体}
+\item \emph{Emphasized 強調}
+\end{itemize}
+
+\section{ソースコード Source Code}
+Source code is below:
 \begin{lstlisting}[language=c]
 int main()
 {
@@ -28,7 +52,7 @@ int main()
 
 \nocite{*} % 全ての参考文献を表示
 
-\bibliography{report}
+%\bibliography{report}
 
 \begin{comment}
 

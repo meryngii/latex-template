@@ -11,9 +11,9 @@ Directory structure:
 - __report.tex__
     - the main document file
 - _plot/\*.plt_
-    - enumerations of gnuplot commands
+    - Plot files on Gnuplot
 - _svg/\*.svg_
-    - Inkscape vector files
+    - Inkscape vector image files
 
 Execute `make` on the top directory. The files on subdirectories will be refreshed recursively.
 

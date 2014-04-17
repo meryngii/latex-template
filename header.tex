@@ -1,11 +1,33 @@
 %%%%% header.tex %%%%%
 
+% 古いパッケージを警告
+\RequirePackage[l2tabu, orthodox]{nag}
+
 \documentclass[10pt,a4j]{jsarticle}
 
 % パッケージの読み込み %{{{
+
+% graphicx, color : 画像に必要
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
-\usepackage{amsmath,amssymb}
+
+% amsmath : 数式に必要
+\usepackage{amsmath}
+
+% fontenc: アンダーバーを検索可能にする
+\usepackage[T1]{fontenc}
+% Computer Modernを使用
+\usepackage{lmodern}
+% Times系フォントを使用
+\IfFileExists{newtxtext.sty}{
+\usepackage{newtxtext,newtxmath}
+}{
+\usepackage{txfonts}
+}
+
+% SI単位系を表示
+\usepackage{siunitx}
+
 % 用紙余白を指定
 \usepackage[top=20truemm,bottom=25truemm,left=20truemm,right=20truemm]{geometry}
 % 段組み
@@ -19,8 +41,8 @@
 % 枠線をつける
 \usepackage{ascmac}
 \usepackage{fancybox}
-% 数式環境で太字を使う
-\usepackage{bm}
+%% 数式環境で太字を使う (\bmmax, \hmmaxの設定に注意)
+%\usepackage{bm}
 % 図表位置を[H]で強制指定
 \usepackage{here}
 % float外で図表番号を表示する (captionof)
@@ -29,14 +51,16 @@
 \usepackage{listings}
 % ページをまたいだ要素でも左右に余白を付けられる (adjustwidth)
 \usepackage{changepage}
-% 参考文献番号を上に表示する
-\usepackage{overcite}
-% SI単位系を表示
-\usepackage{siunitx}
 % URLを表示
 \usepackage{url}
 % 複数の図表をまとめて表示
 \usepackage{subfigure}
+
+%% 表の行に色をつける (rowcolor)
+%\usepackage{colortbl}
+%% 参考文献番号を上に表示する
+%\usepackage{overcite}
+
 %}}}
 
 % 各種数学記号 %{{{
@@ -89,9 +113,9 @@
 \bibliographystyle{tipsj}
 %}}}
 
-% overciteの設定 %{{{
+% citeの設定 %{{{
 \makeatletter
-\def\@cite#1{\textsuperscript{[#1]}}
+\def\@cite#1{[#1]}
 \makeatother
 %}}}
 
@@ -100,10 +124,9 @@
 %}}}
 
 % listingの設定(lstlisting) %{{{
-
 \lstset{
     breaklines=true, % 行が長くなったら改行する
-    basicstyle=\ttfamily\scriptsize,
+    basicstyle=\ttfamily\footnotesize,
     commentstyle={\itshape \color[cmyk]{1,0.4,1,0}},
     classoffset=1,
     keywordstyle={\bfseries \color[cmyk]{0,1,0,0}},
@@ -118,6 +141,5 @@
     xrightmargin=0zw,
     xleftmargin=3zw
 }
-
 %}}}
 
