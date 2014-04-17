@@ -1,4 +1,4 @@
-.PHONY: plot svg clean
+.PHONY: plot svg markdown clean
 
 F=report
 
