@@ -27,5 +27,5 @@ clean:
 	$(MAKE) -C plot clean
 	$(MAKE) -C svg clean
 	$(MAKE) -C markdown clean
-	rm -f *~ *.dvi *.aux *.log *.pdf *.blg *.bbl
+	rm -f *~ *.dvi *.aux *.log *.pdf *.blg *.bbl *.out
 

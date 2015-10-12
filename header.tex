@@ -56,6 +56,11 @@
 % 複数の図表をまとめて表示
 \usepackage{subfigure}
 
+% 箇条書きの書式をカスタマイズする
+\usepackage{enumitem}
+
+
+
 %% 表の行に色をつける (rowcolor)
 %\usepackage{colortbl}
 %% 参考文献番号を上に表示する
@@ -88,26 +93,28 @@
 \newcommand{\secref}[1]{\S\,\ref{sec:#1}}
 %}}}
 
-% 表番号の形式変更 %{{{
-\makeatletter
-\renewcommand{\thetable}{\thesection.\arabic{table}}
-\@addtoreset{table}{section}
-\makeatother
-%}}}
-
-% 図番号の形式変更 %{{{
-\makeatletter
-\renewcommand{\thefigure}{\thesection.\arabic{figure}}
-\@addtoreset{figure}{section}
-\makeatother
-%}}}
-
-% 数式番号の形式変更 %{{{
-\makeatletter
-\renewcommand{\theequation}{\thesection.\arabic{equation}}
-\@addtoreset{equation}{section}
-\makeatother
-%}}}
+%% 長い文章の時に，図表番号に章の番号を付ける
+%
+%% 表番号の形式変更 %{{{
+%\makeatletter
+%\renewcommand{\thetable}{\thesection.\arabic{table}}
+%\@addtoreset{table}{section}
+%\makeatother
+%%}}}
+%
+%% 図番号の形式変更 %{{{
+%\makeatletter
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+%\@addtoreset{figure}{section}
+%\makeatother
+%%}}}
+%
+%% 数式番号の形式変更 %{{{
+%\makeatletter
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%\@addtoreset{equation}{section}
+%\makeatother
+%%}}}
 
 % 参考文献の形式 %{{{
 \bibliographystyle{tipsj}
@@ -125,6 +132,7 @@
 
 % listingの設定(lstlisting) %{{{
 \lstset{
+    language=c++,
     breaklines=true, % 行が長くなったら改行する
     basicstyle=\ttfamily\footnotesize,
     commentstyle={\itshape \color[cmyk]{1,0.4,1,0}},
@@ -140,6 +148,15 @@
     tabsize=2,
     xrightmargin=0zw,
     xleftmargin=3zw
+}
+%}}}
+
+% itemizeの空白幅 %{{{
+\setitemize{
+    itemsep=0.2em
+,   partopsep=0.5em
+,   topsep=0em
+,   parsep=0.2em
 }
 %}}}
 
